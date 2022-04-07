@@ -38,7 +38,7 @@ namespace SOAPWSEx1.Controllers
 
             string JSONString = string.Empty;
             JSONString = JsonConvert.SerializeObject(dsOrder.Tables[0]);
-            JSONString = JSONString.Substring(1, JSONString.Length - 2);
+            JSONString = JSONString[1..^1];
 
             return JSONString;
         }
