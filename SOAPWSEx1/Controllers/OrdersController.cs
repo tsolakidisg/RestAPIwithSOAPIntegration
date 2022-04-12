@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SOAPWSEx1.Models;
+using RestAPIwithSOAPIntegration.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +11,7 @@ using System.Xml;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace SOAPWSEx1.Controllers
+namespace RestAPIwithSOAPIntegration.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

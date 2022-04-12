@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SOAPWSEx1": {
+    "RestAPIwithSOAPIntegration": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
