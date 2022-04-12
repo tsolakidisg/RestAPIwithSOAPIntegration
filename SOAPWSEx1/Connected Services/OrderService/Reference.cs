@@ -16,25 +16,17 @@ namespace OrderService
     public interface SoapDemoSoap
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<string> HelloWorldAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrderStatusById", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<OrderService.GetOrderStatusByIdResponseGetOrderStatusByIdResult> GetOrderStatusByIdAsync(int Id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateDBRecords", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<string> UpdateDBRecordsAsync(int Id, string CustomerName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrderStatus", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<System.Xml.XmlElement> GetOrderStatusAsync(int Id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateDBRecords", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<OrderService.ResponseModelOfString> LoginAsync(string email, string password);
+        System.Threading.Tasks.Task<string> UpdateDBRecordsAsync(int Id, string CustomerName);
     }
     
     /// <remarks/>
@@ -73,62 +65,6 @@ namespace OrderService
             set
             {
                 this.any1Field = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class ResponseModelOfString
-    {
-        
-        private string dataField;
-        
-        private int resultCodeField;
-        
-        private string messageField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Data
-        {
-            get
-            {
-                return this.dataField;
-            }
-            set
-            {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int ResultCode
-        {
-            get
-            {
-                return this.resultCodeField;
-            }
-            set
-            {
-                this.resultCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Message
-        {
-            get
-            {
-                return this.messageField;
-            }
-            set
-            {
-                this.messageField = value;
             }
         }
     }
@@ -176,19 +112,9 @@ namespace OrderService
         {
         }
         
-        public System.Threading.Tasks.Task<string> HelloWorldAsync()
-        {
-            return base.Channel.HelloWorldAsync();
-        }
-        
         public System.Threading.Tasks.Task<OrderService.GetOrderStatusByIdResponseGetOrderStatusByIdResult> GetOrderStatusByIdAsync(int Id)
         {
             return base.Channel.GetOrderStatusByIdAsync(Id);
-        }
-        
-        public System.Threading.Tasks.Task<string> UpdateDBRecordsAsync(int Id, string CustomerName)
-        {
-            return base.Channel.UpdateDBRecordsAsync(Id, CustomerName);
         }
         
         public System.Threading.Tasks.Task<System.Xml.XmlElement> GetOrderStatusAsync(int Id)
@@ -196,9 +122,9 @@ namespace OrderService
             return base.Channel.GetOrderStatusAsync(Id);
         }
         
-        public System.Threading.Tasks.Task<OrderService.ResponseModelOfString> LoginAsync(string email, string password)
+        public System.Threading.Tasks.Task<string> UpdateDBRecordsAsync(int Id, string CustomerName)
         {
-            return base.Channel.LoginAsync(email, password);
+            return base.Channel.UpdateDBRecordsAsync(Id, CustomerName);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
