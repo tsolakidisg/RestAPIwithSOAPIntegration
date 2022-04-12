@@ -24,6 +24,10 @@ namespace OrderService
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<OrderService.GetOrderStatusByIdResponseGetOrderStatusByIdResult> GetOrderStatusByIdAsync(int Id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateDBRecords", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<string> UpdateDBRecordsAsync(int Id, string CustomerName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrderStatus", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<System.Xml.XmlElement> GetOrderStatusAsync(int Id);
@@ -180,6 +184,11 @@ namespace OrderService
         public System.Threading.Tasks.Task<OrderService.GetOrderStatusByIdResponseGetOrderStatusByIdResult> GetOrderStatusByIdAsync(int Id)
         {
             return base.Channel.GetOrderStatusByIdAsync(Id);
+        }
+        
+        public System.Threading.Tasks.Task<string> UpdateDBRecordsAsync(int Id, string CustomerName)
+        {
+            return base.Channel.UpdateDBRecordsAsync(Id, CustomerName);
         }
         
         public System.Threading.Tasks.Task<System.Xml.XmlElement> GetOrderStatusAsync(int Id)

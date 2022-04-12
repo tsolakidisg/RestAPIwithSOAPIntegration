@@ -10,5 +10,6 @@ namespace SOAPWSEx1.Models
         public int Id { get; set; }
         public int Fees { get; set; }
         public string OrderStatus { get; set; }
+        public string CustomerName { get; set; }
     }
 }
